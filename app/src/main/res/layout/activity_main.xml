@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    Simple, readable layout – no libraries needed.
+    Background: deep navy  |  Accent: gold
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- ── App title ────────────────────────────────────────────────── -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕌 FastFit"
+            android:textColor="#C9A84C"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise guide for fasting Muslims"
+            android:textColor="#8899AA"
+            android:textSize="13sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- ── Current time ─────────────────────────────────────────────── -->
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--:-- --"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Time"
+            android:textColor="#8899AA"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- ── Status badge ─────────────────────────────────────────────── -->
+        <TextView
+            android:id="@+id/tvStatusBadge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BEST TIME"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:background="#1B6B3A"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- ── Recommendation card ───────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1A2C3D"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp">
+
+            <!-- Period label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERIOD"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"/>
+
+            <TextView
+                android:id="@+id/tvPeriod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evening"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Time range label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIME WINDOW"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"/>
+
+            <TextView
+                android:id="@+id/tvTimeRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00 PM – 11:00 PM"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A3F55"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Exercise type label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RECOMMENDED EXERCISE"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"/>
+
+            <TextView
+                android:id="@+id/tvExerciseType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength Training / HIIT"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tip -->
+            <TextView
+                android:id="@+id/tvTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peak time! Body is fuelled and hydrated. Go hard."
+                android:textColor="#AABBCC"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"/>
+
+        </LinearLayout>
+
+        <!-- ── Quick reference table ─────────────────────────────────────── -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Schedule"
+            android:textColor="#C9A84C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Row helper: each row is a horizontal LinearLayout -->
+        <!-- Row 1 -->
+
+        <!--
+            NOTE: In a production app, replace the static "include" rows
+            below with a RecyclerView fed by your slots list.
+            Kept static here for simplicity / zero-dependency setup.
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="#1A2C3D"
+            android:layout_marginBottom="4dp"
+            android:padding="12dp">
+
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9 PM – 11 PM" android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strength / HIIT" android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="BEST" android:textColor="#4CAF82" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="4dp" android:padding="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="7:30 PM – 9 PM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Running / Cardio"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="BEST" android:textColor="#4CAF82" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="4dp" android:padding="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="6:30 PM – 7:30 PM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Slow Walk / Stretch"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="GOOD" android:textColor="#C9A84C" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="4dp" android:padding="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="4 PM – 5:30 PM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Light Stretching"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="GOOD" android:textColor="#C9A84C" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="4dp" android:padding="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="6 AM – 5:30 PM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Rest (Fasting)"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="AVOID" android:textColor="#CF6679" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="24dp" android:padding="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="3 AM – 6 AM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Yoga / Brisk Walk"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
+            <TextView android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="GOOD" android:textColor="#C9A84C" android:textSize="11sp"
+                android:textStyle="bold" android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Footer note -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠ Times are based on general Ramadan averages. Adjust to your local prayer schedule."
+            android:textColor="#556677"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
