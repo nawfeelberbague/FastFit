@@ -7,12 +7,12 @@ the current clock time during Ramadan.
 
 ## Screenshots
 
-| Home Screen | Schedule View |
-|:-----------:|:-------------:|
-| ![Home Screen](screenshots/home_screen.png) | ![Schedule View](screenshots/schedule_view.png) |
-| *Current time & recommendation card* | *Full daily schedule reference* |
+|             Home Screen              |             Schedule View              |
+|:------------------------------------:|:--------------------------------------:|
+| ![Home Screen](app/screens/pic1.jpg) | ![Schedule View](app/screens/pic2.jpg) |
+| *Current time & recommendation card* |    *Full daily schedule reference*     |
 
-> 📁 Place your screenshots in a `screenshots/` folder at the root of the project.
+> 📁 Place your screenshots in a `screens/` folder at the root of the project.
 
 ---
 
