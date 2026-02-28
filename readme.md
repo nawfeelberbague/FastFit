@@ -8,10 +8,9 @@ the current clock time during Ramadan.
 
 |                Profile Setup                 |                 Time Display – Top                 |            Time Display – Bottom             |
 |:--------------------------------------------:|:--------------------------------------------------:|:--------------------------------------------:|
-|    ![Profile Setup](app/screens/pic1.jpg)    |     ![Time Display Top](app/screens/pic2.jpg)      | ![Time Display Bottom](app/screens/pic3.jpg) |
+|    ![Profile Setup](app/screens/pic1.png)    |     ![Time Display Top](app/screens/pic2.png)      | ![Time Display Bottom](app/screens/pic3.png) |
 | *Enter age, weight, height, sex & time zone* | *Current time, status badge & recommendation card* |       *Full daily schedule reference*        |
 
-> 📁 Place your screenshots in a `screenshots/` folder at the root of the project.
 
 ---
 
