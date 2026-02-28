@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_profile.xml
+    Profile setup / edit screen.
+    Same dark-navy + gold palette as activity_main.xml.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1B2A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- ── Title ──────────────────────────────────────────────────────── -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕌 FastFit"
+            android:textColor="#C9A84C"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tell us about yourself"
+            android:textColor="#8899AA"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- ── Card ───────────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1A2C3D"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Age -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AGE (years)"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/etAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="e.g. 30"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#556677"
+                android:backgroundTint="#2A3F55"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"/>
+
+            <!-- Weight -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEIGHT (kg)"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="e.g. 75.0"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#556677"
+                android:backgroundTint="#2A3F55"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"/>
+
+            <!-- Height -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HEIGHT (cm)"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/etHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="e.g. 175.0"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#556677"
+                android:backgroundTint="#2A3F55"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"/>
+
+            <!-- Sex -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BIOLOGICAL SEX"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+            <RadioGroup
+                android:id="@+id/rgSex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male"
+                    android:textColor="#FFFFFF"
+                    android:buttonTint="#C9A84C"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female"
+                    android:textColor="#FFFFFF"
+                    android:buttonTint="#C9A84C"/>
+            </RadioGroup>
+
+            <!-- Time Zone -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOUR TIME ZONE"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="4dp"/>
+            <Spinner
+                android:id="@+id/spTimezone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#1A2C3D"
+                android:backgroundTint="#C9A84C"/>
+
+        </LinearLayout>
+
+        <!-- ── Save button ────────────────────────────────────────────────── -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save &amp; Continue"
+            android:textColor="#0D1B2A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#C9A84C"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠ This information stays on your device and is never uploaded."
+            android:textColor="#556677"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

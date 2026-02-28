@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    activity_main.xml
-    Simple, readable layout – no libraries needed.
+    activity_main.xml  (updated)
     Background: deep navy  |  Accent: gold
+    New: tvProfileSummary row + Edit Profile button
 -->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,17 +17,36 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- ── App title ────────────────────────────────────────────────── -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+        <!-- ── App title ─────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🕌 FastFit"
-            android:textColor="#C9A84C"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🕌 FastFit"
+                android:textColor="#C9A84C"
+                android:textSize="28sp"
+                android:textStyle="bold"/>
+
+            <!-- Edit Profile shortcut -->
+            <TextView
+                android:id="@+id/tvEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="✎ Profile"
+                android:textColor="#C9A84C"
+                android:textSize="13sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,10 +54,22 @@
             android:text="Exercise guide for fasting Muslims"
             android:textColor="#8899AA"
             android:textSize="13sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="16dp"/>
 
-        <!-- ── Current time ─────────────────────────────────────────────── -->
+        <!-- ── Profile summary strip ─────────────────────────────────────── -->
+        <TextView
+            android:id="@+id/tvProfileSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="–"
+            android:textColor="#8899AA"
+            android:textSize="11sp"
+            android:background="#162233"
+            android:padding="10dp"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- ── Current time ──────────────────────────────────────────────── -->
         <TextView
             android:id="@+id/tvCurrentTime"
             android:layout_width="wrap_content"
@@ -52,13 +83,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Current Time"
+            android:text="Current Time (your time zone)"
             android:textColor="#8899AA"
             android:textSize="12sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="28dp"/>
 
-        <!-- ── Status badge ─────────────────────────────────────────────── -->
+        <!-- ── Status badge ──────────────────────────────────────────────── -->
         <TextView
             android:id="@+id/tvStatusBadge"
             android:layout_width="match_parent"
@@ -82,7 +113,6 @@
             android:padding="20dp"
             android:layout_marginBottom="20dp">
 
-            <!-- Period label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,7 +132,6 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Time range label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,14 +150,12 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Divider -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#2A3F55"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Exercise type label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,7 +175,6 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Tip -->
             <TextView
                 android:id="@+id/tvTip"
                 android:layout_width="match_parent"
@@ -170,31 +196,17 @@
             android:textStyle="bold"
             android:layout_marginBottom="12dp"/>
 
-        <!-- Row helper: each row is a horizontal LinearLayout -->
-        <!-- Row 1 -->
+        <!-- Row template: Time | Exercise | Badge -->
 
-        <!--
-            NOTE: In a production app, replace the static "include" rows
-            below with a RecyclerView fed by your slots list.
-            Kept static here for simplicity / zero-dependency setup.
-        -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:background="#1A2C3D"
-            android:layout_marginBottom="4dp"
-            android:padding="12dp">
-
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="#1A2C3D"
+            android:layout_marginBottom="4dp" android:padding="12dp">
             <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="9 PM – 11 PM" android:textColor="#AABBCC" android:textSize="13sp"/>
+                android:layout_weight="1" android:text="9 PM – 11 PM"
+                android:textColor="#AABBCC" android:textSize="13sp"/>
             <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Strength / HIIT" android:textColor="#FFFFFF" android:textSize="13sp"/>
+                android:layout_weight="1" android:text="Strength / HIIT"
+                android:textColor="#FFFFFF" android:textSize="13sp"/>
             <TextView android:layout_width="48dp" android:layout_height="wrap_content"
                 android:text="BEST" android:textColor="#4CAF82" android:textSize="11sp"
                 android:textStyle="bold" android:gravity="center"/>
@@ -270,11 +282,11 @@
                 android:textStyle="bold" android:gravity="center"/>
         </LinearLayout>
 
-        <!-- Footer note -->
+        <!-- Footer -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="⚠ Times are based on general Ramadan averages. Adjust to your local prayer schedule."
+            android:text="⚠ Times are based on general Ramadan averages. Adjust to your local prayer schedule. Exercise intensity is personalised to your age and BMI."
             android:textColor="#556677"
             android:textSize="12sp"
             android:gravity="center"
